@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QR Code Generator - Nomee</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>QR Code Generator</h1>
+            <div class="image">
+                <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=www.github.com/imnomee"
+                    alt="www.github.com/imnomee"
+                    height="250"
+                    width="250"
+                    id="image" />
+            </div>
+            <form class="form">
+                <input
+                    type="text"
+                    name=""
+                    id="content"
+                    placeholder="Content in QRCode" />
+                <button type="submit" id="btnCreate">Generate Code</button>
+            </form>
+        </div>
+        <script>
+            let image = document.getElementById('image');
+            let content = document.getElementById('content');
+            let create = document.getElementById('btnCreate');
+            content.value = 'www.github.com/imnomee';
+            image.src =
+                'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=www.github.com/imnomee';
+
+            create.onclick = () => {
+                if (content.value == '') return;
+                let linkQR =
+                    'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=';
+                image.src = linkQR + content.value;
+            };
+        </script>
+    </body>
+</html>
