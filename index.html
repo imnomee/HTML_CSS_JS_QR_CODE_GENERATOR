@@ -12,34 +12,32 @@
             <h1>QR Code Generator</h1>
             <div class="image">
                 <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=www.github.com/imnomee"
-                    alt="www.github.com/imnomee"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.linkedin.com/in/heyimnomee/"
+                    alt="Linked In Profile"
                     height="250"
                     width="250"
                     id="image" />
             </div>
-            <form class="form">
+            <div class="form">
                 <input
                     type="text"
                     name=""
                     id="content"
                     placeholder="Content in QRCode" />
-                <button type="submit" id="btnCreate">Generate Code</button>
-            </form>
+                <button id="btnCreate">Generate Code</button>
+            </div>
         </div>
         <script>
             let image = document.getElementById('image');
             let content = document.getElementById('content');
-            let create = document.getElementById('btnCreate');
-            content.value = 'www.github.com/imnomee';
-            image.src =
-                'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=www.github.com/imnomee';
-
-            create.onclick = () => {
+            let form = document.querySelector('form');
+            const submit = document.getElementById('btnCreate');
+            submit.onclick = () => {
                 if (content.value == '') return;
                 let linkQR =
                     'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=';
                 image.src = linkQR + content.value;
+                content.value = '';
             };
         </script>
     </body>

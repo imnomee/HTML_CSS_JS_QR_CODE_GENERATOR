@@ -1,5 +1,17 @@
-body {
+:root {
+    --light-color: #dcdcdc;
+    --container-background-color: #eeebeb;
+    --dark-color: #191919;
+    --button-color: #2aca83;
+    --button-hover: #209d64;
+}
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -7,21 +19,19 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
-    background: #dcdcdc;
+    background: var(--light-color);
 }
 
 .container {
     width: 400px;
     height: 600px;
-    background: #eeebeb;
-    color: #191919;
+    background: var(--container-background-color);
+    color: var(--dark-color);
     padding: 20px;
-    box-sizing: border-box;
     border-radius: 20px;
-    box-shadow: 20px 20px 50px #191919;
+    box-shadow: 20px 20px 50px var(--dark-color);
 }
 .container h1 {
-    margin: 0;
     font-size: x-large;
     font-weight: 500;
     text-align: center;
@@ -30,7 +40,7 @@ body {
     width: 90%;
 }
 .container .image {
-    background: #fff;
+    background: var(--light-color);
     margin: 20px 0;
     padding: 15%;
     border-radius: 30px;
@@ -38,25 +48,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
 .form input {
     width: 100%;
-    box-sizing: border-box;
     border: none;
     padding: 20px;
-    background: #dcd9d9;
+    background: var(--light-color);
     border-radius: 5px;
     outline: none;
+    font-size: medium;
+    letter-spacing: 0.5px;
 }
 
 .form button {
-    background: #2aca83;
+    background: var(--button-color);
     width: 100%;
     border: none;
-    color: #fff;
+    color: var(--container-background-color);
     padding: 20px;
     margin-top: 10px;
     border-radius: 5px;
     font-weight: bold;
+    transition: all 0.5s;
+    font-size: large;
+}
+
+.form button:hover {
+    background: var(--button-hover);
 }
